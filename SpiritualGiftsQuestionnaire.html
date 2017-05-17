@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Spiritual Gifts Inventory
+		</title>
+		<meta charset="UTF-8">
+		<link rel="shortcut icon" href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" rel="icon" type="image/x-icon"/>
+	</head>
+	<body style="background-color: #585; font-family: Verdana;">
+		<style type="text/css">
+			#head { font-weight: bold; }
+		</style>
+		<div style="background-color: #FFF; padding: 5%; width: 70%; margin: 0px auto;">
+			<div id="questions"></div>
+			<div id="results"></div>
+		</div>
+		<script type="text/javascript">
+			var questions = [
+				"I enjoy creating beautiful, creative or useful things with my hands.",
+				"It is easy for me to decide whether a person is being honest or dishonest.",
+				"By listening and talking with someone, I have helped bring them inner healing and growth.",
+				"I enjoy bringing order to a disorganized situation.",
+				"My joyful hope in God, even in extremely hard situations, has inspired others.",
+				"I can give sacrificially, 'give until it hurts', because I know God will supply all my needs.",
+				"My prayers for those who are sick or in pain are heard by God and often answered with healing.",
+				"When I do an act of service, I feel energized.",
+				"I notice newcomers and look for ways to welcome them.",
+				"I have felt a strong need to pray for someone.",
+				"I enjoy reading and studying in an attempt to better understand God's creation.",
+				"Others cheerfully follow my lead when working on projects.",
+				"I am deeply sensitive to the needs of the less fortunate.",
+				"One of my favorite things to do is to gather with others to grow in our faith together.",
+				"I relate well with people of different cultures and feel energized when with them.",
+				"Singing or playing a musical instrument is one of my favorite ways to pray.",
+				"I have felt a strong sense of what God wants to say to someone.",
+				"Others have thanked me for helping them learn new concepts or skills.",
+				"Other people talk their problems or decisions over with me.",
+				"I feel a great sense of peace when I write.",
+				"When I create something with my hands, I feel especially close to God.",
+				"I can quickly recognize a sinful situation.",
+				"People often come to me when they are troubled or need support.",
+				"I find coordinating and planning events very fulfilling.",
+				"I trust God completely, even when the situation seems impossible.",
+				"Since I believe everything I have is from God, I cheerfully and generously give to others.",
+				"I enjoy praying for sick people because I trust that many of them will be healed as a result.",
+				"One of the best ways I express my faith is by doing practical deeds for others.",
+				"I am energized when someone unexpectedly drops in for a visit.",
+				"I have felt called to pray intensely for someone and kept praying until it was resolved.",
+				"Insights I have gained from my studies have helped others intellectually and spiritually.",
+				"I can motivate others to accomplish a certain task, even if it is difficult.",
+				"I feel privileged to be able to minister to the poor or the needy and receive much joy form this work.",
+				"I enjoy guiding and supporting others as they grow in their faith.",
+				"People of different cultures or races seem comfortable around me.",
+				"Others have told me that my singing or instrumental playing has inspired them.",
+				"I have felt compelled to share an encouraging or challenging word with someone.",
+				"I enjoy explaining things to others and can make complicated matters simple.",
+				"I tend to make good decisions and help others do likewise.",
+				"One of the best ways I express myself and my beliefs is by writing things down.",
+				"The more I pray, the more creative my projects become.",
+				"At times, I have sensed that someone or a certain place is especially holy or filled with God's presence.",
+				"I have been told that I am a good listener and my words have brought comfort to others.",
+				"I am good at and like to delegate jobs when working on complicated tasks.",
+				"I am willing to take risks and step out into the unknown, knowing God will provide.",
+				"I enjoy 'doing without', so I can give more to others.",
+				"God has used me to heal others in a remarkable way, either through my prayers or my care.",
+				"I eagerly look for tasks that need to be done and do them without being asked.",
+				"I go out of my way to make others feel at ease or welcome.",
+				"I can pray for long periods of time without getting tired.",
+				"I am constantly aware of the big picture and how different concepts relate to it.",
+				"I often have a vision of 'what could be' and motivate others to be a part of it.",
+				"When I hear of others suffering, I identify with them and want to help them in a concrete way.",
+				"I get much satisfaction from guiding or steering people in the right direction.",
+				"I feel comfortable and 'at home' with people of different cultures.",
+				"I feel very much alive and close to God when I am singing or play a musical instrument.",
+				"People have told me that I have communicated a timely message to them.",
+				"When I teach something, others seem to learn in a remarkable way.",
+				"I can come up with workable solutions to complex problems.",
+				"Others have told me that they've been touched by the things I have written."
+			];
+			var options = [
+				"Never",
+				"Little",
+				"Some",
+				"Often",
+				"Consistently"
+			];
+			
+			var string = "<h1 style=\"text-align: center;\">Spiritual Gifts Inventory</h1><br>";
+			string = string + "<div style=\"margin: 0px auto;\">";
+			string = string + "<p style=\"font-weight:bold;\">";
+			string = string + "Instructions:";
+			string = string + "</p><p>";
+			string = string + "1.  This is NOT a test! </p><p>";
+			string = string + "2. This inventory is <em>not</em> designed to determine the seven gifts of the Holy Spirit that all Christians receive at Baptism: wisdom, understanding, counsel, strength, knowledge, piety and fear of the Lord (Catechism of the Catholic Church 1845).";
+			string = string + "</p><p>";
+			string = string + "3. Rather, it is for discernment of the <b>spiritual gifts</b> or <b>charisms</b> that are given to us for the sake of others. Spiritual gifts are not for our own personal benefit. They are for \"building up the body of Christ\" (Ephesians 4:12). \"Charisms are ordered to her (the Church's) building up, to the good of men, and the needs of the world\" (Catechism of the Catholic Church 799).";
+			string = string + "</p><p>";
+			string = string + "4. It is perfectly acceptable to choose Never or Rarely for an answer. If we put down all high scores, we will not gain much from this exercise.";
+			string = string + "</p><p>";
+			string = string + "5. Do not spend too much time on any question. Go with your initial, 'gut' reaction.";
+			string = string + "</div><br>";
+			string = string + "<table style=\"margin: 0px auto;\">";
+			string = string + "<tr id=\"head\"><td></td><td>Never&nbsp&nbsp&nbsp&nbsp&nbsp</td><td>Rarely&nbsp&nbsp&nbsp&nbsp&nbsp</td><td>Some&nbsp&nbsp&nbsp&nbsp&nbsp</td><td>Often&nbsp&nbsp&nbsp&nbsp&nbsp</td><td>Consistently&nbsp&nbsp&nbsp&nbsp&nbsp</td></tr></tr><tr><td>&nbsp</td></tr>";
+			
+			for (var i = 0; i < questions.length; i++) {
+				
+				string = string + "<tr>";
+				string = string + "<td><label id=\"question" + (i+1).toString() + "\">" + questions[i] + "</label></td>"
+				 + "<td>" + "<input name=\"input" + (i+1).toString() + "\"" + "type=\"radio\" id=\"Never" + (i+1).toString() + "\" value=\"vsat\">" + "</td>"
+				 + "<td>"+ "<input name=\"input" + (i+1).toString() + "\"" + "type=\"radio\" id=\"Little" + (i+1).toString() + "\" value=\"vsat\">" + "</td>"
+				 + "<td>"+ "<input name=\"input" + (i+1).toString() + "\"" + "type=\"radio\" id=\"Some" + (i+1).toString() + "\" value=\"vsat\">" + "</td>"
+				 + "<td>"+ "<input name=\"input" + (i+1).toString() + "\"" + "type=\"radio\" id=\"Often" + (i+1).toString() + "\" value=\"vsat\">" + "</td>"
+				 + "<td>"+ "<input name=\"input" + (i+1).toString() + "\"" + "type=\"radio\" id=\"Consistently" + (i+1).toString() + "\" value=\"vsat\">" + "</td>";
+				 string = string + "</tr><tr><td>&nbsp</td></tr>";
+			}
+			
+			string = string + "</table>";
+			string = string+"<br><br><button style=\"background-color: #AAA; display: block; width: 50%; height: 40px; margin: auto;\">Submit</button>";
+			
+			questionsDiv = document.querySelector("#questions");
+			questionsDiv.innerHTML = string;
+			
+			submitButton = document.querySelector("button");
+			submitButton.addEventListener("click", function(event) {
+				questionsDiv.removeChild(submitButton);
+				console.log("Click");
+				var results = "";
+				var data = [];
+				for (var i = 0; i < questions.length; i++) {
+					var never = document.querySelector("#Never" + (i+1).toString());
+					var little = document.querySelector("#Little" + (i+1).toString());
+					var some = document.querySelector("#Some" + (i+1).toString());
+					var often = document.querySelector("#Often" + (i+1).toString());
+					var consistently = document.querySelector("#Consistently" + (i+1).toString());
+					
+					data.push([never.checked, little.checked, some.checked, often.checked, consistently.checked]);
+					
+				}
+				
+				var categories = [
+					"Artisan",
+					"Discernment",
+					"Encouragement",
+					"Administration",
+					"Faith",
+					"Giving",
+					"Healing",
+					"Service",
+					"Hospitality",
+					"Intercession",
+					"Knowledge",
+					"Leadership",
+					"Mercy",
+					"Pastoring",
+					"Missionary",
+					"Music",
+					"Prophecy",
+					"Teaching",
+					"Wisdom",
+					"Writing"
+				];
+				var definitions = [
+					"This spiritual gift of creating something useful or beautiful grows in strength as your relationship with God grows.",
+					"This gift allows you to distinguish between truth and error, to quickly identify whether something is of God, of the human spirit, or of evil.",
+					"Empowered by the Holy Spirit, you are a channel of God’s love with your words of comfort, counsel and encouragement to others.",
+					"The Holy Spirit enables you to plan, direct and coordinate people in such a way that the Lord’s work is accomplished in remarkably efficient ways.  This gift involves adeptness at organizing, delegating, and problem-solving. ",
+					"The Holy Spirit gives you an exceptional confidence in God’s promises and ability to follow God’s lead even in seemingly impossible circumstances. ",
+					"You acknowledge that all good things come from the Lord and you respond with generous and sacrificial giving to others, whether it be with your time, talent or treasure. ",
+					"This is the spiritual gift of being God’s channel through whom others are restored to health, whether it be  physical, mental or spiritual. ",
+					"This gift enables you to see beyond your own needs and reach out to those in your community by acts of service in a loving and strengthening way.",
+					"You joyfully welcome and receive others into your home and heart, creating an atmosphere where people feel valued and cared for. ",
+					"This is the gift of praying for others in an patient, persistent and hopeful manner and your prayers are often answered in a powerful way. ",
+					"You have a genuine love for learning, especially the things of God.  Your insights gained through study and intellectual pursuits are shared gracefully with others.",
+					"Those possessing this spiritual gift of leadership receive a vision that coincides with God’s will, motivate others to join them, and are able to direct group efforts to make this vision a reality.",
+					"The Holy Spirit empowers one to perform extraordinary deeds of compassion to those who suffer or are in need. ",
+					"This spiritual gift involves the building and guiding of Christian communities by providing spiritual care, protection, and guidance ",
+					"The Holy Spirit enables you to feel ‘at home’ with those of different cultural, economic, and faith backgrounds while giving you a strong desire to share God’s love with them. ",
+					"Those with this spiritual gift bring others closer to God by  their singing, composing or playing  of a musical instrument. ",
+					"The Holy Spirit enables you to communicate a specific word or call from God to others. ",
+					"This is the spiritual gift of communicating information so others can learn in an exceptional way, and the ability to clearly explain complicated tasks in a simple manner.",
+					"Those with this gift easily apply divine principles to real-life situations and exercise sound judgment. Other people often seek you out for advice. ",
+					"This is when the Holy Spirit empowers you to touch and strengthen others via the written word. This gift grows as your relationship with the Lord grows."
+				];
+				
+				var categoryPoints = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+				console.log(data);
+				for (var i = 0; i < data.length; i++) {
+					var points = 0;
+					for (var j = 0; j < data[i].length; j++) {
+						if (data[i][j] == true) {
+							points += j+1;
+						}
+					}
+					
+					categoryPoints[i%20] += points;
+					
+				}
+				
+				var donePlaces = [];
+				
+				results = results + "<br><br><h1 style=\"text-align:center;\">Results</h1><br>";
+				results = results + "<div style=\"margin: 0px auto;\"><p style=\"font-weight:bold;\">";
+				results = results + "Instructions: </p>"		
+				+ "1. Examine your  top six scores. This is your possible gift mix, a good starting place to discover how God might be using you to help others."
+				+ "</p><p>"
+				+ "2. This inventory is designed to identify possible spiritual gifts you have.  After identifying possible gifts, it is important to spend further time discerning your gifts, seeking feedback from others, and trying them out in real-life situations."
+				+ "</p><p>"
+				+ "3. If it is a true spiritual gift, then God will step in and do something bigger through you."
+				+ "</p><p>"
+				+ "4. These gifts grow and develop over time. As we grow and mature especially in our faith life, we uncover new gifts that we never knew we had."
+				+ "</p><p>"
+				+ "5. Spiritual gifts are meant for ministry, to help other people; they are not for ourselves. \“And he gave some as apostles, others as prophets, others as evangelists, others as pastors and teachers, to equip the holy ones for the work of ministry, for building up the body of Christ.\”  (Ephesians 4:11-12)"	
+				+ "</p><p>"
+				+ "6. This inventory only examines 20 of the known spiritual gifts. It is possible you have other charisms such as evangelism, gospel poverty, miracles, humour, tongues (praise), interpretation of tongues, or peacemaker. This list is by no means exhaustive. God could be working through you in a number of ways."
+				+ "</p></div><br><br>";
+				results = results + "<table style=\"margin: 0px auto;\"><tr style=\"font-weight: bold; text-align: left\"><td>Gift</td><td>Score &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td><td>Definition</td></tr><tr><td>&nbsp</td></tr>";
+				
+				for (var c = 0; c < categories.length; c++) {
+				
+					var max = -1;
+					var place = 0;
+					
+					for (var i = 0; i < categoryPoints.length; i++) {
+						var score = categoryPoints[i];
+						var valid = true;
+						for (var j = 0; j < donePlaces.length; j++) {
+							if (donePlaces[j] == i) {
+								valid = false;
+							}
+						}
+						if (score > max && valid) {
+							max = score;
+							place = i;
+						}
+						
+						
+					}
+					donePlaces.push(place);
+					
+					results = results + "<tr><td><span style=\"color: blue\" >" + categories[place] + ": </span></td><td width=\"100px\">" + categoryPoints[place].toString() + "</td><td>" + definitions[place] +"</td></tr><tr><td>&nbsp</td></tr>";
+					
+				}
+				
+				results = results + "</table>";
+				results = results + "<div style=\"margin: 0px auto;\"><p style=\"font-weight:bold;\">Seven Signs of a Spiritual Gift"
+									+ "</p><p>"
+									+ "1. You get a sense of inner peace, energy, joy when using this gift (on a relatively consistent basis)."
+									+ "</p><p>"
+									+ "2. You feel like you belong or ‘at home’ when using this gift."
+									+ "</p><p>"
+									+ "3. Unusually positive results seem to come easily."
+									+ "</p><p>"
+									+ "4. These gifts thrive when you use them to serve others and fade when you do not."
+									+ "</p><p>"
+									+ "5. The more you pray, the stronger the gift becomes."
+									+ "</p><p>"
+									+ "6. Others recognize the gift in you and ask you for it."
+									+ "</p><p>"
+									+ "7. When using this gift, it often feels like you are praying.</p></div>";
+				
+				resultsDiv = document.querySelector("#results");
+				resultsDiv.innerHTML = results;
+				
+				
+			},false);
+			
+			
+		</script>
+	</body>
+</html>
